@@ -1,0 +1,22 @@
+#include <windows.h>
+#include <ntverp.h>
+
+#ifdef FDKAAC_DLL
+#define VER_FILETYPE    VFT_DLL
+#else
+#define VER_FILETYPE    VFT_APP
+#endif
+
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+
+#ifdef FDKAAC_DLL
+#define VER_FILEDESCRIPTION_STR  "Fraunhofer FDK AAC Codec Library"
+#define VER_INTERNALNAME_STR     "fdkaac.dll"
+#define VER_ORIGINALFILENAME_STR "fdkaac.dll"
+#else
+#define VER_FILEDESCRIPTION_STR  "Fraunhofer FDK AAC Encoder"
+#define VER_INTERNALNAME_STR     "fdkaac.exe"
+#define VER_ORIGINALFILENAME_STR "fdkaac.exe"
+#endif
+
+#include <common.ver>
